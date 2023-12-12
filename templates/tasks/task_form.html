@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if object %} Edit task{% else %} create new task {% endif %}</title>
+    <!--if object is there show title edit task else dispaly new task-->
+</head>
+<body>
+<h2>{% if object %} Edit Task {% else %} create new task {% endif %}</h2>
+<form action=" " method="post" enctype="multipart/form-data">
+    {% csrf_token%}
+    {{form.as_p}}
+    <p><input type="submit" class="btn btn-success" value="submit"></p>
+</form>
+</body>
+</html>

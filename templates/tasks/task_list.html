@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task_list</title>
+</head>
+<body>
+<h2>TASK LIST</h2>
+{% for task in tasks %}
+<!--counter default-->
+   <p> {{ forloop.counter}}, {{task.name}},{{task.t_date}} - {{task.get_status_display}} <!-- we need th display text-->
+   (<a href="{% url 'tasks:task_update' task.id %}">update</a> ) <!--from task -task update file take task id-->
+    (<a href="{% url 'tasks:task_delete' task.id %}"> delete</a>)
+       <!--this task:task_update this will got to the views file anad render the page from their -->
+   </p>
+{% endfor %}
+<a href="{% url 'tasks:task_create' %}">Add New Task</a>
+
+</body>
+</html>

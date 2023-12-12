@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task detail</title>
+</head>
+<body>
+<h1> task details</h1>
+<P>Task name: {{task.name}} |<!--ID IS PASSED TO VIEW I AM TAKING THE NAME FORM THAT ID -->|
+    <a href="{% url 'tasks:task_update' task.id  %}">update</a>
+    <a href="{% url 'tasks:task_delete' task.id %}">Delete</a>
+
+</P>
+
+<p> Task Status: {{task.get_status_display}}</p>
+<p>Date : {{task.t_date}}</p>
+<br>
+<p>
+<a href="{% url 'tasks:task_list' %}">View all task</a>
+<a href="{% url 'tasks:task_create' %}">create list</a>
+</p>
+</body>
+</html>
